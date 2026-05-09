@@ -1,0 +1,5 @@
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+This plugin is distributed under the terms of the GNU General Public License version 2 (GPLv2).
+For the full license text, see: https://www.gnu.org/licenses/gpl-2.0.html
