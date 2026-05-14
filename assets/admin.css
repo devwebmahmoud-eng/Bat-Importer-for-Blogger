@@ -1,0 +1,664 @@
+:root {
+  --mhbi-primary: #2271b1;
+  --mhbi-primary-dark: #135e96;
+  --mhbi-text: #1d2327;
+  --mhbi-muted: #646970;
+  --mhbi-border: #dcdcde;
+  --mhbi-surface: #ffffff;
+  --mhbi-surface-alt: #f6f7f7;
+  --mhbi-success: #00844a;
+  --mhbi-warning: #996800;
+  --mhbi-danger: #b32d2e;
+  --mhbi-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.mhbi-wrap {
+  max-width: 1240px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--mhbi-text);
+}
+
+.mhbi-wrap *,
+.mhbi-wrap *::before,
+.mhbi-wrap *::after {
+  box-sizing: border-box;
+}
+
+.mhbi-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  gap: 20px;
+  margin-bottom: 18px;
+  padding: 24px;
+  border: 1px solid var(--mhbi-border);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: var(--mhbi-shadow);
+}
+
+.mhbi-eyebrow,
+.mhbi-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f0f0f1;
+  color: var(--mhbi-text);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.mhbi-hero h1,
+.mhbi-card h2,
+.mhbi-log-card h2 {
+  margin: 0 0 8px;
+  color: var(--mhbi-text);
+}
+
+.mhbi-hero h1 {
+  font-size: 30px;
+  line-height: 1.18;
+}
+
+.mhbi-hero__text,
+.mhbi-card__header p,
+.mhbi-empty-state p,
+.mhbi-card--metric p,
+.mhbi-inline-help p,
+.mhbi-log-card__header p {
+  margin: 0;
+  color: var(--mhbi-muted);
+  line-height: 1.7;
+}
+
+.mhbi-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mhbi-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #dcdcde;
+  border-radius: 999px;
+  background: #f6f7f7;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mhbi-badge--dark {
+  background: #f0f6fc;
+  border-color: #c3d9ed;
+  color: var(--mhbi-primary-dark);
+}
+
+.mhbi-status-panel,
+.mhbi-card {
+  border: 1px solid var(--mhbi-border);
+  border-radius: 6px;
+  background: var(--mhbi-surface);
+  box-shadow: var(--mhbi-shadow);
+}
+
+.mhbi-status-panel {
+  padding: 20px;
+  height: 100%;
+}
+
+.mhbi-status-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.mhbi-status-panel__row:last-child {
+  border-bottom: 0;
+}
+
+.mhbi-status-panel__row span,
+.mhbi-data-list dt,
+.mhbi-stat-card span,
+.mhbi-card--metric span {
+  color: var(--mhbi-muted);
+}
+
+.mhbi-status-panel__hint {
+  margin-top: 14px;
+  color: var(--mhbi-muted);
+  line-height: 1.65;
+}
+
+.mhbi-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mhbi-status-pill.is-ready { background: #f6f7f7; color: #50575e; }
+.mhbi-status-pill.is-running { background: #f0f6fc; color: var(--mhbi-primary-dark); }
+.mhbi-status-pill.is-complete { background: #edfaef; color: var(--mhbi-success); }
+.mhbi-status-pill.is-stopped { background: #fcf9e8; color: var(--mhbi-warning); }
+
+.mhbi-notice {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.mhbi-notice.is-success { background: #f0f6fc; border-color: #72aee6; color: var(--mhbi-primary-dark); }
+.mhbi-notice.is-warning { background: #fcf9e8; border-color: #dba617; color: var(--mhbi-warning); }
+.mhbi-notice.is-error { background: #fcf0f1; border-color: #d63638; color: var(--mhbi-danger); }
+
+.mhbi-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding-bottom: 2px;
+}
+
+.mhbi-tab {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  background: #f6f7f7;
+  color: var(--mhbi-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+
+.mhbi-tab:hover {
+  border-color: #8c8f94;
+  background: #fff;
+}
+
+.mhbi-tab.is-active {
+  background: #fff;
+  border-color: var(--mhbi-primary);
+  color: var(--mhbi-primary-dark);
+  box-shadow: inset 0 -2px 0 var(--mhbi-primary);
+}
+
+.mhbi-panels {
+  display: block;
+}
+
+.mhbi-panel {
+  animation: mhbi-fade .18s ease;
+}
+
+@keyframes mhbi-fade {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mhbi-overview-grid,
+.mhbi-layout-single {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, .95fr);
+  gap: 18px;
+}
+
+.mhbi-overview-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.mhbi-card {
+  padding: 22px;
+}
+
+.mhbi-card__header,
+.mhbi-log-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.mhbi-card--stack,
+.mhbi-card--form,
+.mhbi-card--table,
+.mhbi-log-card {
+  height: 100%;
+}
+
+.mhbi-progress-panel {
+  padding: 18px;
+  border: 1px solid var(--mhbi-border);
+  border-radius: 10px;
+  background: #f6f7f7;
+}
+
+.mhbi-progress-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#mhbi-status {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#mhbi-progress-text {
+  color: var(--mhbi-muted);
+  font-size: 13px;
+}
+
+.mhbi-progress-bar {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dcdcde;
+}
+
+#mhbi-progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--mhbi-primary);
+  transition: width .28s ease;
+}
+
+.mhbi-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.mhbi-stat-card,
+.mhbi-card--metric {
+  padding: 16px;
+  border: 1px solid var(--mhbi-border);
+  border-radius: 10px;
+  background: var(--mhbi-surface-alt);
+}
+
+.mhbi-stat-card span,
+.mhbi-card--metric span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.mhbi-stat-card strong,
+.mhbi-card--metric strong {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.mhbi-stat-card--danger {
+  border-color: #f4c7c7;
+  background: #fff8f8;
+}
+
+.mhbi-data-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.mhbi-data-list > div {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.mhbi-data-list > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.mhbi-data-list dt,
+.mhbi-data-list dd {
+  margin: 0;
+}
+
+.mhbi-data-list dd {
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.mhbi-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mhbi-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mhbi-field--full {
+  grid-column: 1 / -1;
+}
+
+.mhbi-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.mhbi-field input[type="text"],
+.mhbi-field input[type="number"] {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.mhbi-field input[type="text"]:focus,
+.mhbi-field input[type="number"]:focus {
+  border-color: var(--mhbi-primary);
+  box-shadow: 0 0 0 1px var(--mhbi-primary);
+  outline: 2px solid transparent;
+}
+
+.mhbi-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.mhbi-toggle-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  min-height: 108px;
+  padding: 16px;
+  border: 1px solid var(--mhbi-border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background-color .18s ease;
+}
+
+.mhbi-toggle-card:hover {
+  border-color: #8c8f94;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.mhbi-toggle-card input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mhbi-toggle-card__ui {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  margin-top: 2px;
+  border-radius: 999px;
+  background: #8c8f94;
+  transition: background-color .18s ease;
+}
+
+.mhbi-toggle-card__ui::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15);
+  transition: transform .18s ease;
+}
+
+.mhbi-toggle-card__content strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.mhbi-toggle-card__content small {
+  display: block;
+  color: var(--mhbi-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mhbi-toggle-card input:checked + .mhbi-toggle-card__ui {
+  background: var(--mhbi-primary);
+}
+
+.mhbi-toggle-card input:checked + .mhbi-toggle-card__ui::after {
+  transform: translateX(18px);
+}
+
+.mhbi-toggle-card input:checked ~ .mhbi-toggle-card__content strong {
+  color: var(--mhbi-primary-dark);
+}
+
+.mhbi-toggle-card:has(input:checked) {
+  border-color: #72aee6;
+  background: #f0f6fc;
+}
+
+.mhbi-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.mhbi-toolbar--stacked {
+  justify-content: flex-start;
+}
+
+.mhbi-toolbar__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mhbi-toolbar .button,
+.mhbi-quick-links .button,
+.mhbi-tabs .button {
+  min-height: 40px;
+  padding-inline: 14px;
+  border-radius: 6px;
+}
+
+.mhbi-toolbar .button-hero {
+  min-width: 148px;
+  padding-inline: 18px;
+  font-weight: 700;
+}
+
+.mhbi-toolbar .button.is-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.mhbi-toolbar .button.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: mhbi-spin .7s linear infinite;
+  color: inherit;
+}
+
+@keyframes mhbi-spin { to { transform: rotate(360deg); } }
+
+.mhbi-inline-help {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #f6f7f7;
+  color: var(--mhbi-muted);
+}
+
+.mhbi-inline-help .dashicons {
+  color: var(--mhbi-primary);
+}
+
+.mhbi-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--mhbi-border);
+  border-radius: 10px;
+}
+
+.mhbi-table {
+  margin: 0;
+  border: 0;
+}
+
+.mhbi-table th,
+.mhbi-table td {
+  vertical-align: top;
+}
+
+.mhbi-empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--mhbi-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.mhbi-empty-state .dashicons {
+  margin-bottom: 10px;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: var(--mhbi-primary);
+}
+
+#mhbi-log {
+  min-height: 260px;
+  max-height: 480px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #1d2327;
+  color: #f0f0f1;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .mhbi-hero,
+  .mhbi-overview-grid,
+  .mhbi-layout-single,
+  .mhbi-overview-grid--3,
+  .mhbi-stats-grid,
+  .mhbi-option-grid,
+  .mhbi-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mhbi-data-list > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 782px) {
+  .mhbi-wrap {
+    margin-top: 12px;
+  }
+
+  .mhbi-hero,
+  .mhbi-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .mhbi-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .mhbi-tab {
+    flex: 0 0 auto;
+  }
+
+  .mhbi-status-panel__row,
+  .mhbi-card__header,
+  .mhbi-log-card__header,
+  .mhbi-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.mhbi-button-stop {
+  border-color: #d63638 !important;
+  color: #d63638 !important;
+}
+
+.mhbi-button-stop:hover,
+.mhbi-button-stop:focus {
+  border-color: #b32d2e !important;
+  color: #b32d2e !important;
+  background: #fcf0f1 !important;
+}
+
+.mhbi-button-stop[disabled] {
+  border-color: #dcdcde !important;
+  color: #a7aaad !important;
+  background: #f6f7f7 !important;
+}
